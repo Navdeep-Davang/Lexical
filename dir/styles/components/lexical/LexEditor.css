@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Theming variables for Editor */
+    :root {
+        /* Light Theme Variables */
+        --Editor-Background: #FFFFFF; /* Background color for the editor */
+        --Editor-Text-Primary: #333333; /* Primary text color */
+        --Editor-Text-Secondary: #666666; /* Secondary text color */
+        --Editor-Border: #E1E4E8; /* Border color for the editor */
+        --Editor-Button-Background: #F7F9FB; /* Button background color */
+        --Editor-Button-Text: #333333; /* Button text color */
+    }
+
+    .dark {
+        /* Dark Theme Variables */
+        --Editor-Background: #2d3136; /* Dark background for the editor */
+        --Editor-Text-Primary: #FFFFFF; /* Primary text color in dark mode */
+        --Editor-Text-Secondary: #AAAAAA; /* Secondary text color in dark mode */
+        --Editor-Border: #6b6b6b; /* Border color in dark mode */
+        --Editor-Button-Background: #3a3e44; /* Dark button background */
+        --Editor-Button-Text: #FFFFFF; /* Button text in dark mode */
+    }
+
+    /* Editor specific classes for Text Styles */
+    
+    .editor-paragraph {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--Editor-Text-Primary);
+    }
+
+    .editor-quote {
+        font-style: italic;
+        color: var(--Editor-Text-Secondary);
+        border-left: 4px solid var(--Editor-Border);
+        padding-left: 1rem;
+    }
+
+    /* Heading Styles */
+    .editor-heading-h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--Editor-Text-Primary);
+    }
+
+    .editor-heading-h2 {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: var(--Editor-Text-Primary);
+    }
+
+    .editor-heading-h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--Editor-Text-Primary);
+    }
+
+    .editor-heading-h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: var(--Editor-Text-Primary);
+    }
+
+    .editor-heading-h5 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        color: var(--Editor-Text-Primary);
+    }
+
+    .editor-heading-h6 {
+        font-size: 1rem;
+        font-weight: bold;
+        color: var(--Editor-Text-Primary);
+    }
+
+    /* List Styles */
+    .editor-list-ol,
+    .editor-list-ul {
+        margin-left: 2rem;
+        color: var(--Editor-Text-Primary);
+    }
+
+    .editor-nested-listitem {
+        margin-left: 1.5rem;
+    }
+
+    .editor-listItem {
+        list-style-type: disc;
+    }
+
+    .editor-listItemChecked {
+        list-style-type: check;
+    }
+
+    .editor-listItemUnchecked {
+        list-style-type: circle;
+    }
+
+    /* Text Styling */
+    .editor-textBold {
+        font-weight: bold;
+    }
+
+    .editor-textItalic {
+        font-style: italic;
+    }
+
+    .editor-textCode {
+        font-family: monospace;
+        background-color: #f4f4f4;
+        padding: 0.2rem;
+    }
+
+    .editor-textStrikethrough {
+        text-decoration: line-through;
+    }
+
+    .editor-textSubscript {
+        vertical-align: sub;
+        font-size: 0.8em;
+    }
+
+    .editor-textSuperscript {
+        vertical-align: super;
+        font-size: 0.8em;
+    }
+
+    .editor-textUnderline {
+        text-decoration: underline;
+    }
+
+    .editor-textUnderlineStrikethrough {
+        text-decoration: underline line-through;
+    }
+
+    /* Code Highlighting Styles */
+    .editor-tokenAttr {
+        color: #FF4081; /* Example color for attributes */
+    }
+
+    .editor-tokenComment {
+        color: #607D8B; /* Example color for comments */
+    }
+
+    .editor-tokenFunction {
+        color: #03A9F4; /* Example color for functions */
+    }
+
+    .editor-tokenSelector {
+        color: #8BC34A; /* Example color for selectors */
+    }
+
+    .editor-tokenVariable {
+        color: #FFEB3B; /* Example color for variables */
+    }
+
+    .editor-tokenOperator {
+        color: #FF5722; /* Example color for operators */
+    }
+
+    .editor-tokenPunctuation {
+        color: #9E9E9E; /* Example color for punctuation */
+    }
+
+    .editor-tokenProperty {
+        color: #2196F3; /* Example color for properties */
+    }
+
+    .editor-tokenKeyword {
+        color: #E91E63; /* Example color for keywords */
+    }
+
+    .editor-tokenString {
+        color: #4CAF50; /* Example color for strings */
+    }
+}
