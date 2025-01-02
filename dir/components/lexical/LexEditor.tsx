@@ -16,6 +16,13 @@ import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin
 import { AutoLinkPlugin } from '@lexical/react/LexicalAutoLinkPlugin';
 import { onChange } from './Plugins/OnChangePlugin/onChange';
 import { MATCHERS } from './Plugins/AutoLinkPlugin/matchers';
+import { ClearEditorPlugin } from '@lexical/react/LexicalClearEditorPlugin';
+import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin';
+import { TableOfContentsPlugin } from '@lexical/react/LexicalTableOfContentsPlugin';
+import { TableOfContent } from './Plugins/TableOfContentsPlugin/TableOfContent';
+import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin';
+import { useRef } from 'react';
+import { SelectionAlwaysOnDisplay } from '@lexical/react/LexicalSelectionAlwaysOnDisplay';
 
 
 
@@ -26,12 +33,13 @@ import { MATCHERS } from './Plugins/AutoLinkPlugin/matchers';
 
 function LexEditor() {
   const initialConfig = {
-    namespace: 'MyLexicalEditor',
+    namespace: 'LexEditor',
+    nodes: [],
     theme,
     onError,
   };
 
- 
+  const editorRef = useRef(null);
 
   return (     
 
@@ -50,6 +58,19 @@ function LexEditor() {
           <TablePlugin />
           <TabIndentationPlugin />
           <AutoLinkPlugin matchers={MATCHERS} />
+          <ClearEditorPlugin />
+          <MarkdownShortcutPlugin />
+
+          <TableOfContentsPlugin>
+            {(tableOfContentsArray) => {
+              return (
+                <TableOfContent tableOfContents={tableOfContentsArray} />
+              );
+            }}
+          </TableOfContentsPlugin>
+
+          <EditorRefPlugin editorRef={editorRef} />;
+          <SelectionAlwaysOnDisplay />
         </LexicalComposer>
       </div>
   );
