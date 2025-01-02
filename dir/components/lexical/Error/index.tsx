@@ -1,4 +1,4 @@
 
-export function onError(error: unknown) {
+export function onError(error: Error) {
     console.error(error);
   }
