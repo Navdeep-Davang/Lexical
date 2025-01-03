@@ -23,6 +23,7 @@ import { TableOfContent } from './Plugins/TableOfContentsPlugin/TableOfContent';
 import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin';
 import { useRef } from 'react';
 import { SelectionAlwaysOnDisplay } from '@lexical/react/LexicalSelectionAlwaysOnDisplay';
+import { LexNodes } from './Nodes';
 
 
 
@@ -32,9 +33,10 @@ import { SelectionAlwaysOnDisplay } from '@lexical/react/LexicalSelectionAlwaysO
 
 
 function LexEditor() {
+
   const initialConfig = {
     namespace: 'LexEditor',
-    nodes: [],
+    nodes: [...LexNodes],
     theme,
     onError,
   };
