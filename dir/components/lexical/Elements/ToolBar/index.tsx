@@ -5,7 +5,8 @@ import React from 'react'
 export const ToolBar = () => {
   
   return (
-  <div className="flex-wrap  px-4 py-2 bg-neutral-800/20 rounded-xl flex justify-start items-center gap-2">
+    
+  <div className="inline-flex self-start flex-wrap  px-4 py-2 bg-neutral-800/20 rounded-xl justify-center items-center gap-2">
    
     <div className="flex items-center gap-4">
       <button className="p-2 hover:bg-neutral-700 rounded-md" aria-label="Undo">
