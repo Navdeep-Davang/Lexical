@@ -45,7 +45,7 @@ function LexEditor() {
 
   return (     
 
-      <div className="bg-orange-200/20 w-4/5 h-4/5 p-4">
+      <div className="bg-orange-200/20 w-full h-4/5 p-4">
         <LexicalComposer initialConfig={initialConfig}>
           <RichTextPlugin
             contentEditable={<ContentEditable className='focus:outline-none' />}           
