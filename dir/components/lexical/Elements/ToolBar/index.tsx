@@ -1,83 +1,68 @@
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon, BoldIcon, ChevronDown, HighlighterIcon, ItalicIcon, Redo2Icon, UnderlineIcon, Undo2Icon } from 'lucide-react'
 import React from 'react'
 
 export const ToolBar = () => {
   
   return (
-  <div className=" px-4 py-2 bg-neutral-800 rounded-xl flex justify-start items-center gap-4">
+  <div className="flex-wrap  px-4 py-2 bg-neutral-800/20 rounded-xl flex justify-start items-center gap-2">
    
     <div className="flex items-center gap-4">
       <button className="p-2 hover:bg-neutral-700 rounded-md" aria-label="Undo">
-        <div className="w-4 h-4 relative">
-          {/* Place your undo SVG here */}
-        </div>
+        <Undo2Icon />        
       </button>
-      <button className="p-2 hover:bg-neutral-700 rounded-md" aria-label="Redo">
-        <div className="w-4 h-4 relative">
-          {/* Place your redo SVG here */}
-        </div>
+      <button className="p-2 hover:bg-neutral-700 rounded-md" aria-label="Redo">        
+        <Redo2Icon/>        
       </button>
     </div>
   
     {/* Text Format Dropdown */}
-    <div className="h-8 px-3 bg-white/20 rounded-lg flex items-center gap-2">
-      <span className="text-white text-sm font-medium">Body 1</span>
-      <button className="text-white" aria-label="Format Options">
-        <div className="w-4 h-4 relative">
-          {/* Place your dropdown SVG here */}
-        </div>
-      </button>
+    <div className="bg-white/20 rounded-lg">
+      <Select>
+        <SelectTrigger className="h-full px-3 flex items-center justify-between gap-2 text-sm text-white font-medium">
+          <SelectValue placeholder="Body 1" />
+          <ChevronDown className="w-4 h-4 text-white" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="body1">Body 1</SelectItem>
+          <SelectItem value="heading1">Heading 1</SelectItem>
+          <SelectItem value="heading2">Heading 2</SelectItem>
+          <SelectItem value="quote">Quote</SelectItem>
+        </SelectContent>
+      </Select>
     </div>
   
     {/* Text Styling Icons */}
     <div className="flex items-center gap-2">
-      <button className="p-2 hover:bg-neutral-700 rounded-md" aria-label="Bold">
-        <div className="w-4 h-4 relative">
-          {/* Place your bold SVG here */}
-        </div>
+      <button className="p-2 hover:bg-neutral-700 rounded-md" aria-label="Bold">       
+          <BoldIcon/>        
       </button>
       <button className="p-2 hover:bg-neutral-700 rounded-md" aria-label="Italic">
-        <div className="w-4 h-4 relative">
-          {/* Place your italic SVG here */}
-        </div>
+        <ItalicIcon/>
       </button>
       <button className="p-2 hover:bg-neutral-700 rounded-md" aria-label="Underline">
-        <div className="w-4 h-4 relative">
-          {/* Place your underline SVG here */}
-        </div>
+        <UnderlineIcon/>
       </button>
     </div>
   
     {/* Highlight Dropdown */}
     <div className="relative">
       <button className="p-2 hover:bg-neutral-700 rounded-md flex items-center gap-1" aria-label="Highlight">
-        <div className="w-4 h-4 relative">
-          {/* Place your highlight SVG here */}
-        </div>
-        <div className="w-3 h-3 relative">
-          {/* Place your dropdown arrow SVG here */}
-        </div>
-      </button>
-      <div className="absolute hidden bg-white text-black rounded shadow-lg mt-2 p-2">
-        {/* Highlight dropdown options */}
-      </div>
+        <HighlighterIcon/>
+        <ChevronDown/>
+      </button>      
     </div>
   
     {/* Text Alignment Icons */}
     <div className="flex items-center gap-2">
       <button className="p-2 hover:bg-neutral-700 rounded-md" aria-label="Align Left">
-        <div className="w-4 h-4 relative">
-          {/* Place your align left SVG here */}
-        </div>
+        <AlignLeftIcon />
       </button>
       <button className="p-2 hover:bg-neutral-700 rounded-md" aria-label="Align Center">
-        <div className="w-4 h-4 relative">
-          {/* Place your align center SVG here */}
-        </div>
+        <AlignCenterIcon />
       </button>
       <button className="p-2 hover:bg-neutral-700 rounded-md" aria-label="Align Right">
-        <div className="w-4 h-4 relative">
-          {/* Place your align right SVG here */}
-        </div>
+        <AlignRightIcon />
       </button>
     </div>
   </div>  
