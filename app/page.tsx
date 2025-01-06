@@ -1,4 +1,4 @@
-import LexEditor from "@/dir/components/lexical/LexEditor";
+import LexEditor from "@/dir/components/lexical/Elements/Editor/LexEditor";
 
 
 export default function Home() {
