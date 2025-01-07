@@ -1,3 +1,4 @@
+'use client'
 
 import {ElementFormatType} from 'lexical';
 import React, {

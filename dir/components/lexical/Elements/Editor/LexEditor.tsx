@@ -21,9 +21,11 @@ import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPl
 import { TableOfContentsPlugin } from '@lexical/react/LexicalTableOfContentsPlugin';
 import { TableOfContent } from '../../Plugins/TableOfContentsPlugin/TableOfContent';
 import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { SelectionAlwaysOnDisplay } from '@lexical/react/LexicalSelectionAlwaysOnDisplay';
 import { LexNodes } from '../../Nodes';
+import { useSettings } from '../../Context/SettingsContext';
+import ShortcutsPlugin from '../../Plugins/ShortcutsPlugin';
 
 
 
@@ -33,6 +35,14 @@ import { LexNodes } from '../../Nodes';
 
 
 function LexEditor() {
+  const [activeEditor, setActiveEditor] = useState(editor);
+  const [isLinkEditMode, setIsLinkEditMode] = useState<boolean>(false);
+
+  const {
+    settings: {    
+      isRichText  
+    },
+  } = useSettings();
 
   const initialConfig = {
     namespace: 'LexEditor',
@@ -52,6 +62,15 @@ function LexEditor() {
             ErrorBoundary={LexicalErrorBoundary}
           />
           
+          
+          {isRichText && (
+            <ShortcutsPlugin
+              editor={activeEditor}
+              setIsLinkEditMode={setIsLinkEditMode}
+            />
+          )}
+
+
           <AutoFocusPlugin />
           <OnChangePlugin onChange={onChange} />
           <HistoryPlugin />

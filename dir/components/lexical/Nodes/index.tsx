@@ -4,6 +4,7 @@ import { ListItemNode, ListNode } from "@lexical/list";
 import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode";
 import { HeadingNode, QuoteNode } from "@lexical/rich-text";
 import { TableCellNode, TableNode, TableRowNode } from "@lexical/table";
+import { FigmaNode } from "./FigmaNode";
 
 
 
@@ -21,6 +22,7 @@ export const LexNodes = [
     HeadingNode,
     QuoteNode,
     CodeNode,
+    FigmaNode,
     
 
 
