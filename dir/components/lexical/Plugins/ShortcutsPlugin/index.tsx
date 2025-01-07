@@ -13,8 +13,8 @@ import {
 } from 'lexical';
 import {Dispatch, useEffect} from 'react';
 
-import {useToolbarState} from '../../context/ToolbarContext';
-import {sanitizeUrl} from '../../utils/url';
+import {useToolbarState} from '../../Context/ToolbarContext';
+import {sanitizeUrl} from '../../Utils/url';
 import {
   clearFormatting,
   formatBulletList,
@@ -26,7 +26,7 @@ import {
   formatQuote,
   updateFontSize,
   UpdateFontSizeType,
-} from '../ToolbarPlugin/utils';
+} from '../ToolBarPlugin/utils';
 import {
   isCapitalize,
   isCenterAlign,
