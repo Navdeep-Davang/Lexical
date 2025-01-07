@@ -1,6 +1,6 @@
 
 
-import { CAN_USE_DOM } from "../../Shared/canUseDOM";
+import { CAN_USE_DOM } from "./Shared/canUseDOM";
 
 
 declare global {
