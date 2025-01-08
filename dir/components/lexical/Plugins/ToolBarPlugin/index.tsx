@@ -61,7 +61,7 @@ import {
   import {EmbedConfigs} from '../AutoEmbedPlugin';
   import {INSERT_COLLAPSIBLE_COMMAND} from '../CollapsiblePlugin';
   import {InsertEquationDialog} from '../EquationsPlugin';
-  import {INSERT_EXCALIDRAW_COMMAND} from '../ExcalidrawPlugin';
+  // import {INSERT_EXCALIDRAW_COMMAND} from '../ExcalidrawPlugin';
   import {
     INSERT_IMAGE_COMMAND,
     InsertImageDialog,
@@ -178,11 +178,11 @@ import { IS_APPLE } from '../ShortcutsPlugin/Shared/environment';
   function BlockFormatDropDown({
     editor,
     blockType,
-    rootType,
+    // rootType,
     disabled = false,
   }: {
     blockType: keyof typeof blockTypeToBlockName;
-    rootType: keyof typeof rootTypeToRootName;
+    // rootType: keyof typeof rootTypeToRootName;
     editor: LexicalEditor;
     disabled?: boolean;
   }): React.JSX.Element {
@@ -280,7 +280,7 @@ import { IS_APPLE } from '../ShortcutsPlugin/Shared/environment';
     );
   }
   
-  function Divider(): JSX.Element {
+  function Divider(): React.JSX.Element {
     return <div className="divider" />;
   }
   
@@ -294,7 +294,7 @@ import { IS_APPLE } from '../ShortcutsPlugin/Shared/environment';
     value: string;
     style: string;
     disabled?: boolean;
-  }): JSX.Element {
+  }): React.JSX.Element {
     const handleClick = useCallback(
       (option: string) => {
         editor.update(() => {
@@ -470,7 +470,7 @@ import { IS_APPLE } from '../ShortcutsPlugin/Shared/environment';
     activeEditor: LexicalEditor;
     setActiveEditor: Dispatch<LexicalEditor>;
     setIsLinkEditMode: Dispatch<boolean>;
-  }): JSX.Element {
+  }): React.JSX.Element {
     const [selectedElementKey, setSelectedElementKey] = useState<NodeKey | null>(
       null,
     );
@@ -755,7 +755,7 @@ import { IS_APPLE } from '../ShortcutsPlugin/Shared/environment';
               <BlockFormatDropDown
                 disabled={!isEditable}
                 blockType={toolbarState.blockType}
-                rootType={toolbarState.rootType}
+                // rootType={toolbarState.rootType}
                 editor={activeEditor}
               />
               <Divider />
@@ -1058,7 +1058,9 @@ import { IS_APPLE } from '../ShortcutsPlugin/Shared/environment';
                     <i className="icon gif" />
                     <span className="text">GIF</span>
                   </DropDownItem>
-                  <DropDownItem
+
+
+                  {/* <DropDownItem
                     onClick={() => {
                       activeEditor.dispatchCommand(
                         INSERT_EXCALIDRAW_COMMAND,
@@ -1068,7 +1070,9 @@ import { IS_APPLE } from '../ShortcutsPlugin/Shared/environment';
                     className="item">
                     <i className="icon diagram-2" />
                     <span className="text">Excalidraw</span>
-                  </DropDownItem>
+                  </DropDownItem> */}
+
+
                   <DropDownItem
                     onClick={() => {
                       showModal('Insert Table', (onClose) => (

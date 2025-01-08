@@ -11,6 +11,9 @@ importers:
       '@lexical/code':
         specifier: ^0.23.0
         version: 0.23.0
+      '@lexical/hashtag':
+        specifier: ^0.23.0
+        version: 0.23.0
       '@lexical/link':
         specifier: ^0.23.0
         version: 0.23.0
