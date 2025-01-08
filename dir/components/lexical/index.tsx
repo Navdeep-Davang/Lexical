@@ -5,7 +5,7 @@ import { ToolBar } from './Elements/ToolBar'
 export const LexicalEditor = () => {
   return (
     <div className='w-3/4'>
-        <ToolBar/>
+        {/* <ToolBar/> */}
         <LexEditor/>
         
     </div>

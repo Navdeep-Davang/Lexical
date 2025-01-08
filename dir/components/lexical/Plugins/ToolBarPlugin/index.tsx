@@ -54,9 +54,9 @@ import {
   import useModal from '../../Hooks/useModal';
   import catTypingGif from '../../images/cat-typing.gif';
   import {$createStickyNode} from '../../Nodes/StickyNode';
-  import DropDown, {DropDownItem} from '../../ui/DropDown';
-  import DropdownColorPicker from '../../ui/DropdownColorPicker';
-  import {getSelectedNode} from '../../utils/getSelectedNode';
+  import DropDown, {DropDownItem} from '../../Elements/DropDown';
+  import DropdownColorPicker from '../../Elements/DropdownColorPicker';
+  import {getSelectedNode} from '../../Utils/getSelectedNode';
   import {sanitizeUrl} from '../../Utils/url';
   import {EmbedConfigs} from '../AutoEmbedPlugin';
   import {INSERT_COLLAPSIBLE_COMMAND} from '../CollapsiblePlugin';
@@ -84,7 +84,7 @@ import {
     formatParagraph,
     formatQuote,
   } from './utils';
-import { IS_APPLE } from '../ShortcutsPlugin/environment';
+import { IS_APPLE } from '../ShortcutsPlugin/Shared/environment';
   
   const rootTypeToRootName = {
     root: 'Root',

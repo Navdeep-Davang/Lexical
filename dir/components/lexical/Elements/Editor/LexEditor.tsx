@@ -7,7 +7,7 @@ import {ContentEditable} from '@lexical/react/LexicalContentEditable';
 import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
 import {LexicalErrorBoundary} from '@lexical/react/LexicalErrorBoundary';
 import { onError } from '../../Error';
-import { theme } from '../../Theme';
+import { theme } from '../../Theme/LexEditorTheme';
 import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin';
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin';
 import { ListPlugin } from '@lexical/react/LexicalListPlugin';
@@ -21,11 +21,12 @@ import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPl
 import { TableOfContentsPlugin } from '@lexical/react/LexicalTableOfContentsPlugin';
 import { TableOfContent } from '../../Plugins/TableOfContentsPlugin/TableOfContent';
 import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin';
-import { useRef, useState } from 'react';
+import { useRef,  } from 'react';
 import { SelectionAlwaysOnDisplay } from '@lexical/react/LexicalSelectionAlwaysOnDisplay';
 import { LexNodes } from '../../Nodes';
 import { useSettings } from '../../Context/SettingsContext';
-import ShortcutsPlugin from '../../Plugins/ShortcutsPlugin';
+// import ShortcutsPlugin from '../../Plugins/ShortcutsPlugin';
+// import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 
 
 
@@ -35,12 +36,13 @@ import ShortcutsPlugin from '../../Plugins/ShortcutsPlugin';
 
 
 function LexEditor() {
-  const [activeEditor, setActiveEditor] = useState(editor);
-  const [isLinkEditMode, setIsLinkEditMode] = useState<boolean>(false);
+  // const [editor] = useLexicalComposerContext();
+  // const [activeEditor, setActiveEditor] = useState(editor);
+  // const [isLinkEditMode, setIsLinkEditMode] = useState<boolean>(false);
 
   const {
     settings: {    
-      isRichText  
+      // isRichText  
     },
   } = useSettings();
 
@@ -63,12 +65,12 @@ function LexEditor() {
           />
           
           
-          {isRichText && (
+          {/* {isRichText && (
             <ShortcutsPlugin
               editor={activeEditor}
               setIsLinkEditMode={setIsLinkEditMode}
             />
-          )}
+          )} */}
 
 
           <AutoFocusPlugin />
