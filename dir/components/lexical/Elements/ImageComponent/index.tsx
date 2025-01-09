@@ -53,19 +53,19 @@ import * as React from 'react';
 import {Suspense, useCallback, useEffect, useRef, useState} from 'react';
 
 // import {createWebsocketProvider} from '../collaboration';
-import {useSettings} from '../../Context/SettingsContext';
+// import {useSettings} from '../../Context/SettingsContext';
 // import {useSharedHistoryContext} from '../context/SharedHistoryContext';
 import brokenImage from '../images/image-broken.svg';
 import EmojisPlugin from '../../Plugins/EmojisPlugin';
 import KeywordsPlugin from '../../Plugins/KeywordsPlugin';
-import LinkPlugin from '../Plugins/LinkPlugin';
-import MentionsPlugin from '../plugins/MentionsPlugin';
-import TreeViewPlugin from '../plugins/TreeViewPlugin';
-import ContentEditable from '../ui/ContentEditable';
-import ImageResizer from '../ui/ImageResizer';
-import {EmojiNode} from './EmojiNode';
-import {$isImageNode} from './ImageNode';
-import {KeywordNode} from './KeywordNode';
+import LinkPlugin from '../../Plugins/LinkPlugin';
+import MentionsPlugin from '../../Plugins/MentionsPlugin';
+// import TreeViewPlugin from '../plugins/TreeViewPlugin';
+import ContentEditable from '../../Elements/ContentEditable';
+import ImageResizer from '../../Elements/ImageResizer';
+import {EmojiNode} from '../../Nodes/EmojiNode';
+import {$isImageNode} from '../../Nodes/ImageNode';
+import {KeywordNode} from '../../Nodes/KeywordNode';
 import Image from 'next/image';
 import { JSX } from 'react'
 
@@ -398,9 +398,9 @@ export default function ImageComponent({
   };
 
   // const {historyState} = useSharedHistoryContext();
-  const {
-    settings: {showNestedEditorTreeView},
-  } = useSettings();
+  // const {
+  //   settings: {showNestedEditorTreeView},
+  // } = useSettings();
 
   const draggable = isSelected && $isNodeSelection(selection) && !isResizing;
   const isFocused = (isSelected || isResizing) && isEditable;
@@ -472,7 +472,7 @@ export default function ImageComponent({
                 }
                 ErrorBoundary={LexicalErrorBoundary}
               />
-              {showNestedEditorTreeView === true ? <TreeViewPlugin /> : null}
+              {/* {showNestedEditorTreeView === true ? <TreeViewPlugin /> : null} */}
             </LexicalNestedComposer>
           </div>
         )}
