@@ -18,12 +18,12 @@ import './ImageNode.css';
 import {HashtagNode} from '@lexical/hashtag';
 import {LinkNode} from '@lexical/link';
 import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
-import {useCollaborationContext} from '@lexical/react/LexicalCollaborationContext';
-import {CollaborationPlugin} from '@lexical/react/LexicalCollaborationPlugin';
+// import {useCollaborationContext} from '@lexical/react/LexicalCollaborationContext';
+// import {CollaborationPlugin} from '@lexical/react/LexicalCollaborationPlugin';
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
 import {LexicalErrorBoundary} from '@lexical/react/LexicalErrorBoundary';
 import {HashtagPlugin} from '@lexical/react/LexicalHashtagPlugin';
-import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
+// import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
 import {LexicalNestedComposer} from '@lexical/react/LexicalNestedComposer';
 import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
 import {useLexicalEditable} from '@lexical/react/useLexicalEditable';
@@ -53,12 +53,12 @@ import * as React from 'react';
 import {Suspense, useCallback, useEffect, useRef, useState} from 'react';
 
 // import {createWebsocketProvider} from '../collaboration';
-import {useSettings} from '../context/SettingsContext';
-import {useSharedHistoryContext} from '../context/SharedHistoryContext';
+import {useSettings} from '../../Context/SettingsContext';
+// import {useSharedHistoryContext} from '../context/SharedHistoryContext';
 import brokenImage from '../images/image-broken.svg';
-import EmojisPlugin from '../plugins/EmojisPlugin';
-import KeywordsPlugin from '../plugins/KeywordsPlugin';
-import LinkPlugin from '../plugins/LinkPlugin';
+import EmojisPlugin from '../Plugins/EmojisPlugin';
+import KeywordsPlugin from '../Plugins/KeywordsPlugin';
+import LinkPlugin from '../Plugins/LinkPlugin';
 import MentionsPlugin from '../plugins/MentionsPlugin';
 import TreeViewPlugin from '../plugins/TreeViewPlugin';
 import ContentEditable from '../ui/ContentEditable';
@@ -170,7 +170,7 @@ export default function ImageComponent({
   const [isSelected, setSelected, clearSelection] =
     useLexicalNodeSelection(nodeKey);
   const [isResizing, setIsResizing] = useState<boolean>(false);
-  const {isCollabActive} = useCollaborationContext();
+  // const {isCollabActive} = useCollaborationContext();
   const [editor] = useLexicalComposerContext();
   const [selection, setSelection] = useState<BaseSelection | null>(null);
   const activeEditorRef = useRef<LexicalEditor | null>(null);
@@ -397,7 +397,7 @@ export default function ImageComponent({
     setIsResizing(true);
   };
 
-  const {historyState} = useSharedHistoryContext();
+  // const {historyState} = useSharedHistoryContext();
   const {
     settings: {showNestedEditorTreeView},
   } = useSettings();
